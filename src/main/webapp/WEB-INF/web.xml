@@ -38,6 +38,18 @@
             <param-name>buckets</param-name>
             <param-value>1</param-value>
         </init-param>
+        <init-param>
+            <param-name>exclusions</param-name>
+            <param-value>/metrics</param-value>
+        </init-param>
+        <init-param>
+            <param-name>path-depth</param-name>
+            <param-value>4</param-value>
+        </init-param>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>true</param-value>
+        </init-param>
     </filter>
     <filter-mapping>
         <filter-name>metricsFilter</filter-name>
