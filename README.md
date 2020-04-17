@@ -6,5 +6,6 @@
 docker-compose up --build
 ```
 
-Sample servlet on localhost:8080/app/sample
-Metrics on localhost:8080/app/metrics
+Sample servlet: localhost:8080/app/sample
+
+Metrics:  localhost:8080/app/metrics
