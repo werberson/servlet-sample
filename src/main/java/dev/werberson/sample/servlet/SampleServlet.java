@@ -1,5 +1,7 @@
 package dev.werberson.sample.servlet;
 
+import dev.werberson.sample.metrics.CustomMetrics;
+
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,8 +13,11 @@ public class SampleServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        // Increments a custom metric
+        CustomMetrics.getInstance().customCounter.labels("custom value").inc();
+
         // Set success status code 200.
-        resp.setStatus(HttpServletResponse.SC_FOUND);
+        resp.setStatus(HttpServletResponse.SC_OK);
         // Set content type to text/plain.
         resp.setContentType(CONTENT_TYPE_TEXT);
 

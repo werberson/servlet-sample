@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1"
          metadata-complete="true">
@@ -34,10 +34,12 @@
     <filter>
         <filter-name>metricsFilter</filter-name>
         <filter-class>br.com.labbs.monitor.filter.MetricsCollectorFilter</filter-class>
+        <!-- Overrides buckets-->
         <init-param>
             <param-name>buckets</param-name>
             <param-value>1</param-value>
         </init-param>
+        <!-- Exclude-->
         <init-param>
             <param-name>exclusions</param-name>
             <param-value>/metrics</param-value>
@@ -48,6 +50,10 @@
         </init-param>
         <init-param>
             <param-name>debug</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <init-param>
+            <param-name>export-jvm-metrics</param-name>
             <param-value>true</param-value>
         </init-param>
     </filter>
